@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+main {
+    min-height: 86vh;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#secao-formulario,
+#cards-formulario {
+    padding: 20px;
+}
+
+#cards-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px
+}
+
+.card-form {
+    background-color: var(--firty-bg-color);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#secao-formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputs-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-duplo {
+    display: flex;
+    gap: 15px;
+}
+
+input,
+select {
+    border-radius: 999px;
+    padding: 0px 7px;
+    font-size: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.400);
+    background-color: #FAFAF7;
+    height: 30px;
+}
+
+textarea {
+    height: 100px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.400);
+    background-color: #FAFAF7;
+    border-radius: 15px;
+    padding: 7px;
+}
+
+#btn-form {
+    width: 100%;
+    border-radius: 999px;
+    height: 30px;
+    text-transform: uppercase;
+    background-color: var(--second-bg-color);
+    color: white;
+    font-weight: 600;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#btn-form:hover {
+    background-color: var(--third-bg-color);
+}
+
+@media(max-width: 992px) {
+    main {
+        display: block;
+    }
+}
+
+@media(max-width: 576px) {
+    .input-duplo {
+        flex-direction: column;
+    }
+
+    .card-form {
+    background-color: var(--firty-bg-color);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+}
+
+/* Estilo do Modal de aviso */
+
+#modal-aviso{
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    margin: auto;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: var(--second-bg-color);
+    color: white;
+    border-radius: 0px 0px 15px 15px;
+
+    transform: translateX(-50%);
+    display: none;
+}
+
+#p-modal-aviso{
+    padding: 0px 10px 10px;
+}
+
+#linhaColorida{
+    width: 100%;
+    height: 5px;
+}
