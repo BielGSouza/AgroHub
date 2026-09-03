@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 import '../css/store.css';
+import CarrinhoDeCompras from './CarrinhoDeCompras';
 
-// Importações dos banners (já existentes)
-import Enxada from '../assets/banners/enxada.jpg';
+// Importações dos banners
 import BannerUm from '../assets/banners/banner_agricola_equipamentos(1).jpg';
 import BannerDois from '../assets/banners/banner_agricola_insumos(1).jpg';
 
@@ -26,10 +26,58 @@ import VetoresLinhas from '../assets/vetores/vetoresLinhas.svg';
 import IconeCaixa from '../assets/sectionStore/box_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
 import IconeCartao from '../assets/sectionStore/credit_card_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
 
+// Importações dos produtos
+import Enxada from '../assets/produtos/enxada.jpg';
+import SacoSilagem from '../assets/produtos/saco-de-silagem.jpg';
+import SementeUva from '../assets/produtos/semente-uva.webp';
+import SementeCalendula from '../assets/produtos/semente-calendula.jpg';
+import SementeOnzeHoras from '../assets/produtos/semente-onze-horas.jpg';
+import SementeCapuchinha from '../assets/produtos/semente-capuchinha.jpg';
+
 const Store = () => {
     // Referências para os carrosséis de produtos
     const carrosselRef = useRef(null);
     const carrosselRef2 = useRef(null);
+
+    //Array com produtos (exemplo)
+    const produtos = [
+        {
+            id: 1,
+            nome: "Enxada com cabo de madeira",
+            preco: 75.90,
+            imagem: Enxada
+        },
+        {
+            id: 2,
+            nome: "Saco de cilagem",
+            preco: 27.50,
+            imagem: SacoSilagem
+        },
+        {
+            id: 3,
+            nome: "Semente de uva",
+            preco: 32.49,
+            imagem: SementeUva
+        },
+        {
+            id: 4,
+            nome: "Semente de Calêndula",
+            preco: 75.90,
+            imagem: SementeCalendula
+        },
+        {
+            id: 5,
+            nome: "Semente de Onze Horas",
+            preco: 75.90,
+            imagem: SementeOnzeHoras
+        },
+        {
+            id: 6,
+            nome: "Semente de Capuchinha",
+            preco: 75.90,
+            imagem: SementeCapuchinha
+        },
+    ]
 
     // Função para mover o carrossel de produtos
     const mover = (direcao) => {
@@ -190,18 +238,20 @@ const Store = () => {
                             onClick={() => mover('direita')}
                         />
                         <div id="tela-rolavel-produtos" ref={carrosselRef}>
-                            <div className="card-produto">
-                                <img src={Enxada} alt="Enxada preta e afiada" />
-                                <p className="paragrafo mb-0 text-center">Enxada preta e afiada</p>
-                                <p className="pagrafo mb-0 fw-medium">R$ 75,90</p>
-                            </div>
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
-                            <div className="card-produto" />
+                            {produtos.map((produto, index) => (
+                                <div
+                                    className="card-produto"
+                                    key={index}
+                                >
+                                    <img src={produto.imagem} alt="Enxada preta e afiada" />
+                                    <p className="paragrafo mb-0 text-center">{produto.nome}</p>
+                                    <p className="pagrafo mb-0 fw-medium">R$ {produto.preco.toFixed(2)}</p>
+
+                                    <div className='add-carrinho'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M444-576v-132H312v-72h132v-132h72v132h132v72H516v132h-72ZM213-117.21q-21-21.21-21-51T213.21-219q21.21-21 51-21T315-218.79q21 21.21 21 51T314.79-117q-21.21 21-51 21T213-117.21Zm432 0q-21-21.21-21-51T645.21-219q21.21-21 51-21T747-218.79q21 21.21 21 51T746.79-117q-21.21 21-51 21T645-117.21ZM48-792v-72h133l155 360h301l113-264h78L703-476q-9 20-26.5 32T637-432H317l-42 72h493v72H276q-42 0-63-36.5t0-71.5l52-90-131-306H48Z"/></svg>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                         <img
                             id="btn-esquerda"
@@ -298,6 +348,7 @@ const Store = () => {
                         </div>
                     </div>
                 </aside>
+                <CarrinhoDeCompras />
             </main>
             <Footer />
         </>

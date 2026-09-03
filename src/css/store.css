@@ -161,6 +161,7 @@
     align-items: center;
     flex-direction: column;
     gap: 5px;
+    position: relative;
 }
 
 .card-produto>img {
@@ -254,6 +255,20 @@
     color: var(--primary-text-color);
     font-family: var(--font-InterRegular);
     font-size: 14px;
+}
+
+.add-carrinho{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--second-bg-color);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 @media (max-width: 576px) {

@@ -1,0 +1,61 @@
+@charset 'UTF-8';
+
+.carrinho {
+    width: 50px;
+    height: 50px;
+    background-color: var(--second-bg-color);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 9999;
+}
+
+.carrinho:hover {
+    scale: 1.1;
+    transition: 0.4s;
+    box-shadow: 0px 0px 5px rgba(231, 230, 230, 0.5);
+}
+
+.carrinho-container{
+    width: 200px;
+    height: 350px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    background-color: var(--primary-bg-color);
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    z-index: 9999;
+}
+
+.barra-carrinho{
+    background-color: var(--second-bg-color);
+    width: 100%;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fechar-carrinho{
+    background-color: var(--second-bg-color);
+    padding: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
