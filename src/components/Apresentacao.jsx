@@ -15,6 +15,7 @@ const Apresentacao = () => {
     const [produtividade, setProdutividade] = useState('');
     const [preco, setPreco] = useState('');
     const [resultado, setResultado] = useState(null);
+    const [divResultado, setDivResultado] = useState(false);
 
     // Função para buscar clima (simulada - substitua pela API real)
     const buscarClima = () => {
@@ -82,7 +83,9 @@ const Apresentacao = () => {
             receita: `R$ ${receitaBruta.toFixed(2).replace('.', ',')}`,
             lucro: `R$ ${lucroEstimado.toFixed(2).replace('.', ',')}`
         });
+        setDivResultado(true);
     };
+
 
     return (
         <main style={{display: 'block'}}>
@@ -272,7 +275,7 @@ const Apresentacao = () => {
                     />
                     <button onClick={buscarClima}>Consultar</button>
                 </div>
-                <div id="painel-clima">
+                <div id="painel-clima" className='ativo'>
                     {climaData && (
                         <div className="clima-card">
                             <div className="clima-topo">
@@ -378,7 +381,7 @@ const Apresentacao = () => {
                         <button className="btn-calcular" onClick={calcularSafra}>Calcular Estimativa</button>
                     </div>
                     {resultado && (
-                        <div id="resultado-calc">
+                        <div id="resultado-calc"  className="ativo">
                             <div className="resultado-item">
                                 <strong id="res-sacas">{resultado.sacas}</strong>
                                 <span>Produção Total</span>

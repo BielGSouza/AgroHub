@@ -16,8 +16,8 @@ const Store = () => {
         if (carrosselRef.current) {
             const scrollAmount = 300;
             const newScrollLeft = direcao === 'direita'
-                ? carrosselRef.current.scrollLeft + scrollAmount
-                : carrosselRef.current.scrollLeft - scrollAmount;
+                ? carrosselRef.current.scrollLeft - scrollAmount
+                : carrosselRef.current.scrollLeft + scrollAmount;
 
             carrosselRef.current.scrollTo({
                 left: newScrollLeft,
@@ -31,8 +31,8 @@ const Store = () => {
         if (carrosselRef2.current) {
             const scrollAmount = 300;
             const newScrollLeft = direcao === 'direita'
-                ? carrosselRef2.current.scrollLeft + scrollAmount
-                : carrosselRef2.current.scrollLeft - scrollAmount;
+                ? carrosselRef2.current.scrollLeft - scrollAmount
+                : carrosselRef2.current.scrollLeft + scrollAmount;
 
             carrosselRef2.current.scrollTo({
                 left: newScrollLeft,
@@ -44,15 +44,8 @@ const Store = () => {
     return (
         <>
             <Header />
-            <main style={{display: 'block'}}>
+            <main style={{ display: 'block' }}>
                 <section id="apresentacao">
-                    {/* Comentário JSX - seção desativada
-          <div id="son-apresentacao">
-            <img src="../assets/banners/banner_agricola_insumos(1).jpg" alt="Banner agrícola insumos" width="100%" />
-            <img src="../assets/banners/banner_agricola_equipamentos(1).jpg" width="100%" alt="Banner agrícola equipamentos" />
-          </div>
-          */}
-
                     <div id="carouselExampleIndicators" className="carousel slide">
                         <div className="carousel-indicators">
                             <button
