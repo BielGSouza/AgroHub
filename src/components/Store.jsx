@@ -2,9 +2,29 @@ import React, { useState, useRef } from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 import '../css/store.css';
+
+// Importações dos banners (já existentes)
 import Enxada from '../assets/banners/enxada.jpg';
 import BannerUm from '../assets/banners/banner_agricola_equipamentos(1).jpg';
-import BannerDois from '../assets/banners/banner_agricola_insumos(1).jpg'
+import BannerDois from '../assets/banners/banner_agricola_insumos(1).jpg';
+
+// Importações da seção "card" (3 imagens)
+import Ferramentas from '../assets/sectionStore/photo-1573561368183-fd88bdb4503d 1.png';
+import Maquinas from '../assets/sectionStore/photo-1685335686020-e0b487f7f426 1.png';
+import Insumos from '../assets/sectionStore/premium_photo-1661964196891-3d3f378a97b2 1.png';
+
+// Importação do ícone AgroHub (usado nos botões)
+import IconeAgroHub from '../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg';
+
+// Importações das setas do carrossel
+import Seta from '../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg';
+
+// Importação dos vetores de linhas
+import VetoresLinhas from '../assets/vetores/vetoresLinhas.svg';
+
+// Importações do sub-rodapé
+import IconeCaixa from '../assets/sectionStore/box_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
+import IconeCartao from '../assets/sectionStore/credit_card_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
 
 const Store = () => {
     // Referências para os carrosséis de produtos
@@ -104,7 +124,7 @@ const Store = () => {
                     <div className="card-store" id="card-store-one">
                         <img
                             className="img-card"
-                            src="../assets/sectionStore/photo-1573561368183-fd88bdb4503d 1.png"
+                            src={Ferramentas}
                             alt="Ferramentas agrícolas"
                             height="100%"
                         />
@@ -112,7 +132,7 @@ const Store = () => {
                             <p className="paragrafo mb-0">FERRAMENTAS</p>
                             <button className="btn-card">
                                 <img
-                                    src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg"
+                                    src={IconeAgroHub}
                                     alt="Ícone AgroHub"
                                 />
                                 CONFIRA
@@ -123,7 +143,7 @@ const Store = () => {
                     <div className="card-store" id="card-store-two">
                         <img
                             className="img-card"
-                            src="../assets/sectionStore/photo-1685335686020-e0b487f7f426 1.png"
+                            src={Maquinas}
                             alt="Máquinas agrícolas"
                             height="100%"
                         />
@@ -131,7 +151,7 @@ const Store = () => {
                             <p className="paragrafo mb-0">MÁQUINAS</p>
                             <button className="btn-card">
                                 <img
-                                    src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg"
+                                    src={IconeAgroHub}
                                     alt="Ícone AgroHub"
                                 />
                                 CONFIRA
@@ -142,7 +162,7 @@ const Store = () => {
                     <div className="card-store" id="card-store-three">
                         <img
                             className="img-card"
-                            src="../assets/sectionStore/premium_photo-1661964196891-3d3f378a97b2 1.png"
+                            src={Insumos}
                             alt="Insumos agrícolas"
                             height="100%"
                         />
@@ -150,7 +170,7 @@ const Store = () => {
                             <p className="paragrafo mb-0">INSUMOS</p>
                             <button className="btn-card">
                                 <img
-                                    src="../assets/sectionStore/agrohub_tech_font_1-removebg-preview 2.svg"
+                                    src={IconeAgroHub}
                                     alt="Ícone AgroHub"
                                 />
                                 <p className="paragrafo mb-0">CONFIRA</p>
@@ -165,7 +185,7 @@ const Store = () => {
                         <img
                             id="btn-direita"
                             className="setas-linha-produto"
-                            src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg"
+                            src={Seta}
                             alt="Seta direita"
                             onClick={() => mover('direita')}
                         />
@@ -186,14 +206,14 @@ const Store = () => {
                         <img
                             id="btn-esquerda"
                             className="setas-linha-produto"
-                            src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg"
+                            src={Seta}
                             alt="Seta esquerda"
                             style={{ transform: 'rotate(180deg)' }}
                             onClick={() => mover('esquerda')}
                         />
                     </div>
                     <img
-                        src="../assets/vetores/vetoresLinhas.svg"
+                        src={VetoresLinhas}
                         alt="Vetores de linhas"
                         style={{ position: 'absolute', width: '100%', height: '61%' }}
                     />
@@ -226,7 +246,7 @@ const Store = () => {
                         <img
                             id="btn-direita2"
                             className="setas-linha-produto"
-                            src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg"
+                            src={Seta}
                             alt="Seta direita"
                             onClick={() => moverTwo('direita')}
                         />
@@ -243,14 +263,14 @@ const Store = () => {
                         <img
                             id="btn-esquerda2"
                             className="setas-linha-produto"
-                            src="../assets/sectionStore/arrow_forward_50dp_F1E9DC_FILL0_wght400_GRAD0_opsz48 2.svg"
+                            src={Seta}
                             alt="Seta esquerda"
                             style={{ transform: 'rotate(180deg)' }}
                             onClick={() => moverTwo('esquerda')}
                         />
                     </div>
                     <img
-                        src="../assets/vetores/vetoresLinhas.svg"
+                        src={VetoresLinhas}
                         alt="Vetores de linhas"
                         style={{ position: 'absolute', width: '100%', height: '61%' }}
                     />
@@ -259,7 +279,7 @@ const Store = () => {
                 <aside id="sub-rodape">
                     <div className="div-rodape">
                         <img
-                            src="../assets/sectionStore/box_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg"
+                            src={IconeCaixa}
                             alt="Ícone de caixa"
                         />
                         <div>
@@ -269,7 +289,7 @@ const Store = () => {
                     </div>
                     <div className="div-rodape">
                         <img
-                            src="../assets/sectionStore/credit_card_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg"
+                            src={IconeCartao}
                             alt="Ícone de cartão de crédito"
                         />
                         <div>

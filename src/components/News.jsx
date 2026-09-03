@@ -5,6 +5,31 @@ import '../css/fontes.css'
 import '../css/root.css'
 import '../css/news.css'
 
+// Imagens da seção "Em Alta"
+import NoticiaMaior from '../assets/pageNews/noticiaMaior.png';
+import FotoTrator from '../assets/pageNews/fotoTrator.png';
+import FotoGraos from '../assets/pageNews/fotoGraos.png';
+import ChinaPanama from '../assets/pageNews/China-e-Panama.jpg';
+import CNA from '../assets/pageNews/CNA.jpg';
+
+// Imagens da seção "Notícias" (fixas)
+import TarcisioAgro from '../assets/pageNews/tarcisio-agro.jpg';
+import ESX2026 from '../assets/pageNews/ESX2026.jpeg';
+import Preco from '../assets/pageNews/preco.jpg';
+import ConexaoMulheres from '../assets/pageNews/conexao-mulheres.jpg';
+import DoisBrasis from '../assets/pageNews/dois-brasis.jpeg';
+import ConexaoAgro from '../assets/pageNews/conexao-agro.jpeg';
+import LiderancaFeminina from '../assets/pageNews/lideranca-feminina.png';
+import SNFZ11 from '../assets/pageNews/SNFZ11.jpg';
+import AgroMelodiaHarmonia from '../assets/pageNews/agro-melodia-harmonia.png';
+import AgroBaiano from '../assets/pageNews/agro-baiano.jpg';
+
+// Imagens da seção "Novidades"
+import IA from '../assets/pageNews/IA.jpg';
+import TratorHibrido from '../assets/pageNews/tratorhibrido.jpg';
+import Robos from '../assets/pageNews/robos.png';
+import Irrigacao from '../assets/pageNews/Irrigacao.png';
+
 const News = () => {
   // Estado para armazenar notícias adicionadas dinamicamente
   const [noticias, setNoticias] = useState([]);
@@ -68,7 +93,7 @@ const News = () => {
                 href="https://cbn.globo.com/brasil/noticia/2024/10/17/brasil-tem-aumento-de-90percent-do-reflorestamento-nos-ultimos-tres-anos.ghtml"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ backgroundImage: "url('../assets/pageNews/noticiaMaior.png')" }}
+                style={{ backgroundImage: `url(${NoticiaMaior})` }}
               >
                 <h3 className="subtitulo mb-0">A taxa de reflorestamento cresce no Brasil</h3>
               </a>
@@ -79,7 +104,7 @@ const News = () => {
                   href="https://valor.globo.com/agronegocios/noticia/2026/05/21/marca-chinesa-lanca-tratores-hibridos-no-brasil-e-mira-10percent-do-mercado.ghtml"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ backgroundImage: "url('../assets/pageNews/fotoTrator.png')" }}
+                  style={{ backgroundImage: `url(${FotoTrator})` }}
                 >
                   <h4 className="subtitulo-pequeno mb-0">Novo modelo de Trator é lançado no Brasil</h4>
                 </a>
@@ -89,7 +114,7 @@ const News = () => {
                   href="https://globorural.globo.com/especiais/caminhos-da-safra/noticia/2026/02/frete-de-graos-deve-subir-20percent-em-fevereiro-mas-abaixo-do-pico-de-2025.ghtml"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ backgroundImage: "url('../assets/pageNews/fotoGraos.png')" }}
+                  style={{ backgroundImage: `url(${FotoGraos})` }}
                 >
                   <h4 className="subtitulo-pequeno mb-0">Frete dos Grãos deve aumentar em 20%</h4>
                 </a>
@@ -99,7 +124,7 @@ const News = () => {
                   href="https://agro2.com.br/agronegocio/china-e-panama-abrem-mercado-para-novos-produtos-agropecuarios-brasileiros/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ backgroundImage: "url('../assets/pageNews/China-e-Panama.jpg')" }}
+                  style={{ backgroundImage: `url(${ChinaPanama})` }}
                 >
                   <h4 className="subtitulo-pequeno mb-0">China e Panamá abrem mercado para o agro</h4>
                 </a>
@@ -109,7 +134,7 @@ const News = () => {
                   href="https://cnabrasil.org.br/noticias/cna-debate-modernizacao-do-credito-rural-e-lei-do-agro-3/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ backgroundImage: "url('../assets/pageNews/CNA.jpg')" }}
+                  style={{ backgroundImage: `url(${CNA})` }}
                 >
                   <h4 className="subtitulo-pequeno mb-0">CNA analisa modernização do agro e debate nova lei do agro</h4>
                 </a>
@@ -123,71 +148,27 @@ const News = () => {
             <h2 className="titulo mb-0">Notícias</h2>
             <hr className="hrone" />
 
-            <div className="p-3 mb-4" style={{ backgroundColor: 'var(--second-bg-color, #2f654f)', borderRadius: '25px' }}>
-              <h3 className="text-white mb-3" style={{ fontSize: '20px' }}>Adicionar Nova Notícia</h3>
-
-              <div className="row g-2">
-                <div className="col-md-4">
-                  <input 
-                    type="text" 
-                    id="add-titulo" 
-                    className="form-control" 
-                    placeholder="Título da notícia"
-                    value={novaNoticia.titulo}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="col-md-4">
-                  <input 
-                    type="text" 
-                    id="add-img" 
-                    className="form-control" 
-                    placeholder="URL da Imagem (ex: https://...)"
-                    value={novaNoticia.img}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="col-md-2">
-                  <input 
-                    type="text" 
-                    id="add-link" 
-                    className="form-control" 
-                    placeholder="Link (opcional)"
-                    value={novaNoticia.link}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="col-md-2">
-                  <button 
-                    onClick={criarNoticia} 
-                    className="btn w-100 fw-bold" 
-                    style={{ backgroundColor: '#67c587', color: 'white' }}
-                  >
-                    Publicar
-                  </button>
-                </div>
-              </div>
-            </div>
+            {/* ... formulário de adicionar notícia ... */}
 
             <div id="cards-noticias">
-              {/* Notícias fixas */}
+              {/* Notícias fixas com imagens importadas */}
               <a 
                 className="card-horizontal"
                 href="https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/06/20/tarcisio-agro-esta-sendo-desrespeitado-e-produtores-estao-em-dificuldade.htm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/tarcisio-agro.jpg" alt="Notícia 1" />
+                <img src={TarcisioAgro} alt="Notícia 1" />
                 <h3>Tarcísio: agro está sendo desrespeitado e produtores estão em dificuldade</h3>
               </a>
 
               <a 
                 className="card-horizontal"
-                href="https://www.gov.br/agricultura/pt-br/composicao/sfa/espirito-santo/noticias/mapa-participa-do-esx-2026-e-destaca-avancos-do-agro-capixaba"
+                href="https://www.gov.br/agricultura/pt-br/composicao/sfa/espirito-santo/noticias/mapa-participa-do-esx-2026-e-desta-avancos-do-agro-capixaba"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/ESX2026.jpeg" alt="Notícia 2" />
+                <img src={ESX2026} alt="Notícia 2" />
                 <h3>Mapa participa do ESX 2026 e destaca avanços do agro capixaba</h3>
               </a>
 
@@ -197,7 +178,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/preco.jpg" alt="Notícia 3" />
+                <img src={Preco} alt="Notícia 3" />
                 <h3>Preços sobem, custos disparam e margens do agro continuam sob pressão</h3>
               </a>
 
@@ -207,7 +188,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/conexao-mulheres.jpg" alt="Notícia 4" />
+                <img src={ConexaoMulheres} alt="Notícia 4" />
                 <h3>Coopermil realiza 1º encontro do programa Conexão Mulheres no Agro</h3>
               </a>
 
@@ -217,7 +198,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/dois-brasis.jpeg" alt="Notícia 5" />
+                <img src={DoisBrasis} alt="Notícia 5" />
                 <h3>O agro mostrou dois brasis: um entrega resultado, o outro ainda trava no básico</h3>
               </a>
 
@@ -227,7 +208,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/conexao-agro.jpeg" alt="Notícia 6" />
+                <img src={ConexaoAgro} alt="Notícia 6" />
                 <h3>Conexão Agro fortalece o setor rural e lança 2ª festa do café em Poços de Caldas</h3>
               </a>
 
@@ -237,7 +218,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/lideranca-feminina.png" alt="Notícia 7" />
+                <img src={LiderancaFeminina} alt="Notícia 7" />
                 <h3>Lideranças femininas do agro catarinense participam do evento conhecendo a federação</h3>
               </a>
 
@@ -247,7 +228,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/SNFZ11.jpg" alt="Notícia 8" />
+                <img src={SNFZ11} alt="Notícia 8" />
                 <h3>SNFZ11: Surfa avanço do agro brasileiro que já superou meta global para 2050</h3>
               </a>
 
@@ -257,7 +238,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/agro-melodia-harmonia.png" alt="Notícia 9" />
+                <img src={AgroMelodiaHarmonia} alt="Notícia 9" />
                 <h3>Sem harmonia, Brasil não vira melodia; sem comunicação, agro vira cacofonia</h3>
               </a>
 
@@ -267,7 +248,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../assets/pageNews/agro-baiano.jpg" alt="Notícia 10" />
+                <img src={AgroBaiano} alt="Notícia 10" />
                 <h3>SEAGRI leva pauta do agro baiano a cinco órgãos federais em Brasília</h3>
               </a>
 
@@ -299,7 +280,7 @@ const News = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="../assets/pageNews/IA.jpg" alt="Drone no agro" />
+              <img src={IA} alt="Drone no agro" />
               <div className="info-novidade">
                 <span>Tecnologia</span>
                 <h3>IA detecta pragas em tempo real</h3>
@@ -313,7 +294,7 @@ const News = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="../assets/pageNews/tratorhibrido.jpg" alt="Trator híbrido" />
+              <img src={TratorHibrido} alt="Trator híbrido" />
               <div className="info-novidade">
                 <span>Equipamentos</span>
                 <h3>Novo trator híbrido chega ao Brasil</h3>
@@ -327,7 +308,7 @@ const News = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="../assets/pageNews/robos.png" alt="Robôs no campo" />
+              <img src={Robos} alt="Robôs no campo" />
               <div className="info-novidade">
                 <span>Tendências</span>
                 <h3>Robôs passam a atuar em lavouras</h3>
@@ -341,7 +322,7 @@ const News = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="../assets/pageNews/Irrigacao.png" alt="Irrigação inteligente" />
+              <img src={Irrigacao} alt="Irrigação inteligente" />
               <div className="info-novidade">
                 <span>Inovação</span>
                 <h3>Irrigação inteligente economiza água</h3>

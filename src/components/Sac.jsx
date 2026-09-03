@@ -3,6 +3,9 @@ import Footer from "./Footer";
 import '../css/sac.css';
 import { useState } from "react";
 
+// Importação do logo
+import Logo from '../assets/header/logo.png';
+
 const Sac = () => {
   // Estados para o formulário
   const [formData, setFormData] = useState({
@@ -175,13 +178,13 @@ const Sac = () => {
               onClick={enviarFormulario}
             >
               <img 
-                src="../assets/header/logo.png" 
+                src={Logo}
                 alt="Logo" 
                 height="20" 
               />
               enviar
               <img 
-                src="../assets/header/logo.png" 
+                src={Logo}
                 alt="Logo" 
                 height="20" 
               />

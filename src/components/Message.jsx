@@ -3,6 +3,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 import '../css/message.css';
 
+// Importações dos ícones da seção de mensagens
+import IconeImagem from '../assets/sectionMessage/image_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
+import IconeEnviar from '../assets/sectionMessage/send_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg';
+
 const Message = () => {
   // Estados para controle do modal e mensagens
   const [modalAberto, setModalAberto] = useState(false);
@@ -210,13 +214,13 @@ const Message = () => {
                 />
                 <img 
                   id="icon-image"
-                  src="../assets/sectionMessage/image_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" 
+                  src={IconeImagem}
                   alt="Ícone de imagem" 
                 />
                 <button id="btn-send-message" onClick={enviarMensagem}>
                   <img 
                     id="icon-send"
-                    src="../assets/sectionMessage/send_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" 
+                    src={IconeEnviar}
                     alt="Enviar mensagem" 
                   />
                 </button>
@@ -265,13 +269,13 @@ const Message = () => {
                 />
                 <img 
                   id="icon-image"
-                  src="../assets/sectionMessage/image_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" 
+                  src={IconeImagem}
                   alt="Ícone de imagem" 
                 />
                 <button id="btn-send-message-modal" onClick={enviarMensagemModal}>
                   <img 
                     id="icon-send"
-                    src="../assets/sectionMessage/send_50dp_263238_FILL0_wght400_GRAD0_opsz48 1.svg" 
+                    src={IconeEnviar}
                     alt="Enviar mensagem" 
                   />
                 </button>
