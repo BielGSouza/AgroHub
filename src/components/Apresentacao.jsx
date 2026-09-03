@@ -4,6 +4,15 @@ import '../css/fontes.css'
 import '../css/root.css'
 import '../css/extras.css'
 
+// Imagens da seção "Quem Somos"
+import FotoPrincipal from '../assets/sectionQuemSomos/photoPrincipal.png';
+import FotoMudaPlantacao from '../assets/sectionQuemSomos/photoSecundaria.png';
+
+// Imagens da seção "Público Alvo"
+import AgricultorSorrindo from '../assets/sectionPublicoAlvo/agricultorSorrindo.png';
+import DoisAgricultores from '../assets/sectionPublicoAlvo/doisAgricultores.png';
+import AgricultorColhendo from '../assets/sectionPublicoAlvo/agricultorColhendo.png';
+
 const Apresentacao = () => {
     // Estados para a funcionalidade de clima
     const [climaData, setClimaData] = useState(null);
@@ -88,7 +97,7 @@ const Apresentacao = () => {
 
 
     return (
-        <main style={{display: 'block'}}>
+        <main style={{ display: 'block' }}>
             <section id="initial">
                 <div id="title">
                     <h1 className="mb-0 fonte-conecta Exo-2 fw-bold titulo-conecta">Conecta</h1>
@@ -112,19 +121,19 @@ const Apresentacao = () => {
                 </div>
                 <div id="div-imagens-quem-somos">
                     <img
-                        src="./assets/sectionQuemSomos/photoSecundaria.png"
+                        src={FotoMudaPlantacao}
                         alt="Foto de uma planta na terra"
                         id="ft-secundaria-one"
                         width="40%"
                         style={{ zIndex: 1 }}
                     />
                     <img
-                        src="./assets/sectionQuemSomos/photoPrincipal.png"
+                        src={FotoPrincipal}
                         width="70%"
                         alt="Foto de um canteiro de uma plantação"
                     />
                     <img
-                        src="./assets/sectionQuemSomos/photoSecundaria.png"
+                        src={FotoMudaPlantacao}
                         alt="Foto de uma planta na terra"
                         width="40%"
                         id="ft-secundaria-two"
@@ -148,31 +157,31 @@ const Apresentacao = () => {
                 </div>
                 <div id="imgs-publico-alvo">
                     <img
-                        src="./assets/sectionPublicoAlvo/agricultorSorrindo.png"
+                        src={AgricultorSorrindo}
                         alt="Agricultor sorrindo"
                         style={{ position: 'absolute', top: '0px', right: '10%', zIndex: 1 }}
                         width="11%"
                     />
                     <img
-                        src="./assets/sectionPublicoAlvo/doisAgricultores.png"
+                        src={DoisAgricultores}
                         alt="Dois agricultores"
                         style={{ position: 'absolute', left: '15%' }}
                         width="30%"
                     />
                     <img
-                        src="./assets/sectionPublicoAlvo/agricultorColhendo.png"
+                        src={AgricultorColhendo}
                         alt="Agricultor colhendo"
                         style={{ zIndex: 2 }}
                         width="35%"
                     />
                     <img
-                        src="./assets/sectionPublicoAlvo/doisAgricultores.png"
+                        src={DoisAgricultores}
                         alt="Dois agricultores"
                         style={{ position: 'absolute', right: '15%' }}
                         width="30%"
                     />
                     <img
-                        src="./assets/sectionPublicoAlvo/agricultorSorrindo.png"
+                        src={AgricultorSorrindo}
                         alt="Agricultor sorrindo"
                         style={{ position: 'absolute', bottom: '0px', left: '10%' }}
                         width="11%"
@@ -381,7 +390,7 @@ const Apresentacao = () => {
                         <button className="btn-calcular" onClick={calcularSafra}>Calcular Estimativa</button>
                     </div>
                     {resultado && (
-                        <div id="resultado-calc"  className="ativo">
+                        <div id="resultado-calc" className="ativo">
                             <div className="resultado-item">
                                 <strong id="res-sacas">{resultado.sacas}</strong>
                                 <span>Produção Total</span>
