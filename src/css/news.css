@@ -177,7 +177,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 10px;
 }
 
 .card-noticias {
@@ -280,6 +280,17 @@
 
     .info-novidade h3 {
         font-size: 18px;
+    }
+
+    .card-horizontal{
+        flex-direction: column;
+        align-items: start;
+        height: auto;
+    }
+
+    .card-horizontal img{
+        width: 100%;
+        object-fit: cover;
     }
 }
 

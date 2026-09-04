@@ -15,7 +15,6 @@ const CarrinhoDeCompras = ({ produtosSelecionados, setProdutosSelecionados }) =>
             alert('Seu carrinho está vazio. Adicione produtos antes de finalizar a compra.');
             return;
         }
-        // Aqui você pode adicionar a lógica para finalizar a compra, como enviar os dados para um servidor ou exibir uma mensagem de confirmação.
         alert('Compra finalizada com sucesso!');
         setProdutosSelecionados([]); // Limpa o carrinho após finalizar a compra
         setCarrinhoAberto(false); // Fecha o carrinho após finalizar a compra

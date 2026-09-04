@@ -148,10 +148,8 @@ const News = () => {
             <h2 className="titulo mb-0">Notícias</h2>
             <hr className="hrone" />
 
-            {/* ... formulário de adicionar notícia ... */}
 
             <div id="cards-noticias">
-              {/* Notícias fixas com imagens importadas */}
               <a 
                 className="card-horizontal"
                 href="https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/06/20/tarcisio-agro-esta-sendo-desrespeitado-e-produtores-estao-em-dificuldade.htm"
@@ -159,7 +157,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={TarcisioAgro} alt="Notícia 1" />
-                <h3>Tarcísio: agro está sendo desrespeitado e produtores estão em dificuldade</h3>
+                <h3 className='subtitulo-pequeno mb-0'>Tarcísio: agro está sendo desrespeitado e produtores estão em dificuldade</h3>
               </a>
 
               <a 
@@ -169,7 +167,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={ESX2026} alt="Notícia 2" />
-                <h3>Mapa participa do ESX 2026 e destaca avanços do agro capixaba</h3>
+                <h3 className='subtitulo-pequeno mb-0'>Mapa participa do ESX 2026 e destaca avanços do agro capixaba</h3>
               </a>
 
               <a 
@@ -179,7 +177,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={Preco} alt="Notícia 3" />
-                <h3>Preços sobem, custos disparam e margens do agro continuam sob pressão</h3>
+                <h3 className='subtitulo-pequeno mb-0'>Preços sobem, custos disparam e margens do agro continuam sob pressão</h3>
               </a>
 
               <a 
@@ -189,7 +187,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={ConexaoMulheres} alt="Notícia 4" />
-                <h3>Coopermil realiza 1º encontro do programa Conexão Mulheres no Agro</h3>
+                <h3 className='subtitulo-pequeno mb-0'>Coopermil realiza 1º encontro do programa Conexão Mulheres no Agro</h3>
               </a>
 
               <a 
@@ -199,7 +197,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={DoisBrasis} alt="Notícia 5" />
-                <h3>O agro mostrou dois brasis: um entrega resultado, o outro ainda trava no básico</h3>
+                <h3 className='subtitulo-pequeno mb-0'>O agro mostrou dois brasis: um entrega resultado, o outro ainda trava no básico</h3>
               </a>
 
               <a 
@@ -209,7 +207,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={ConexaoAgro} alt="Notícia 6" />
-                <h3>Conexão Agro fortalece o setor rural e lança 2ª festa do café em Poços de Caldas</h3>
+                <h3 className='subtitulo-pequeno mb-0'>Conexão Agro fortalece o setor rural e lança 2ª festa do café em Poços de Caldas</h3>
               </a>
 
               <a 
@@ -219,7 +217,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={LiderancaFeminina} alt="Notícia 7" />
-                <h3>Lideranças femininas do agro catarinense participam do evento conhecendo a federação</h3>
+                <h3 className='subtitulo-pequeno mb-0'>Lideranças femininas do agro catarinense participam do evento conhecendo a federação</h3>
               </a>
 
               <a 
@@ -229,7 +227,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={SNFZ11} alt="Notícia 8" />
-                <h3>SNFZ11: Surfa avanço do agro brasileiro que já superou meta global para 2050</h3>
+                <h3 className='subtitulo-pequeno mb-0'>SNFZ11: Surfa avanço do agro brasileiro que já superou meta global para 2050</h3>
               </a>
 
               <a 
@@ -239,7 +237,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={AgroMelodiaHarmonia} alt="Notícia 9" />
-                <h3>Sem harmonia, Brasil não vira melodia; sem comunicação, agro vira cacofonia</h3>
+                <h3 className='subtitulo-pequeno mb-0'>Sem harmonia, Brasil não vira melodia; sem comunicação.</h3>
               </a>
 
               <a 
@@ -249,7 +247,7 @@ const News = () => {
                 rel="noopener noreferrer"
               >
                 <img src={AgroBaiano} alt="Notícia 10" />
-                <h3>SEAGRI leva pauta do agro baiano a cinco órgãos federais em Brasília</h3>
+                <h3 className='subtitulo-pequeno mb-0'>SEAGRI leva pauta do agro baiano a cinco órgãos federais em Brasília</h3>
               </a>
 
               {/* Notícias adicionadas dinamicamente */}
