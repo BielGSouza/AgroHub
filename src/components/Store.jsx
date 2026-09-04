@@ -109,6 +109,27 @@ const Store = () => {
         }
     };
 
+    const [produtosSelecionados, setProdutosSelecionados] = useState([]);
+
+    const adicionarAoCarrinho = (produto) => {
+        setProdutosSelecionados(prev => {
+            // Verifica se o produto já está no carrinho
+            const produtoExistente = prev.find(item => item.id === produto.id);
+
+            if (produtoExistente) {
+                // Se já existe, aumenta a quantidade
+                return prev.map(item =>
+                    item.id === produto.id
+                        ? { ...item, quantidade: item.quantidade + 1 }
+                        : item
+                );
+            } else {
+                // Se não existe, adiciona com quantidade 1
+                return [...prev, { ...produto, quantidade: 1 }];
+            }
+        });
+    };
+
     return (
         <>
             <Header />
@@ -247,8 +268,8 @@ const Store = () => {
                                     <p className="paragrafo mb-0 text-center">{produto.nome}</p>
                                     <p className="pagrafo mb-0 fw-medium">R$ {produto.preco.toFixed(2)}</p>
 
-                                    <div className='add-carrinho'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M444-576v-132H312v-72h132v-132h72v132h132v72H516v132h-72ZM213-117.21q-21-21.21-21-51T213.21-219q21.21-21 51-21T315-218.79q21 21.21 21 51T314.79-117q-21.21 21-51 21T213-117.21Zm432 0q-21-21.21-21-51T645.21-219q21.21-21 51-21T747-218.79q21 21.21 21 51T746.79-117q-21.21 21-51 21T645-117.21ZM48-792v-72h133l155 360h301l113-264h78L703-476q-9 20-26.5 32T637-432H317l-42 72h493v72H276q-42 0-63-36.5t0-71.5l52-90-131-306H48Z"/></svg>
+                                    <div className='add-carrinho' onClick={() => adicionarAoCarrinho(produto)}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#e3e3e3"><path d="M444-576v-132H312v-72h132v-132h72v132h132v72H516v132h-72ZM213-117.21q-21-21.21-21-51T213.21-219q21.21-21 51-21T315-218.79q21 21.21 21 51T314.79-117q-21.21 21-51 21T213-117.21Zm432 0q-21-21.21-21-51T645.21-219q21.21-21 51-21T747-218.79q21 21.21 21 51T746.79-117q-21.21 21-51 21T645-117.21ZM48-792v-72h133l155 360h301l113-264h78L703-476q-9 20-26.5 32T637-432H317l-42 72h493v72H276q-42 0-63-36.5t0-71.5l52-90-131-306H48Z" /></svg>
                                     </div>
                                 </div>
                             ))}
@@ -348,7 +369,10 @@ const Store = () => {
                         </div>
                     </div>
                 </aside>
-                <CarrinhoDeCompras />
+                <CarrinhoDeCompras
+                    produtosSelecionados={produtosSelecionados}
+                    setProdutosSelecionados={setProdutosSelecionados}
+                />
             </main>
             <Footer />
         </>
