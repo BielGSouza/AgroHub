@@ -177,7 +177,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 10px;
 }
 
 .card-noticias {
@@ -242,8 +242,6 @@
     height: 170px;
     object-fit: cover;
 }
-    display: block;
-}
 
 .info-novidade {
     padding: 18px;
@@ -282,6 +280,17 @@
 
     .info-novidade h3 {
         font-size: 18px;
+    }
+
+    .card-horizontal{
+        flex-direction: column;
+        align-items: start;
+        height: auto;
+    }
+
+    .card-horizontal img{
+        width: 100%;
+        object-fit: cover;
     }
 }
 
